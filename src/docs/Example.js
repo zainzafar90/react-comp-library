@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import CodeExample from "./CodeExample";
+
 class Example extends React.Component {
   constructor(props) {
     super(props);
@@ -32,7 +34,7 @@ class Example extends React.Component {
           </button>
         </p>
 
-        {showCode && code}
+        {showCode && <CodeExample>{code}</CodeExample>}
       </div>
     );
   }
