@@ -49,13 +49,12 @@ class PasswordInput extends React.Component {
         {...props}
       >
         {showVisibilityToggle && (
-          <a
-            href=""
+          <button
             onClick={this.toggleShowPassword}
             style={{ marginLeft: 5 }}
           >
             <EyeIcon />
-          </a>
+          </button>
         )}
         {value.length > 0 && quality && (
           <ProgressBar percent={quality} width={130} />
