@@ -1,16 +1,13 @@
-import React from "react";
 import Enzyme from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-import ProgressBar from "./ProgressBar";
+import { getWidthAsPercentOfTotalWidth } from "./percentUtils";
 
-describe("ProgressBar", () => {
+describe("getWidthAsPercentOfTotalWidth", () => {
   test("getWidthAsPercentOfTotalWidth should return 250 with total width of 500 and percent of 50", () => {
-    const wrapper = Enzyme.shallow(<ProgressBar width={500} percent={50} />);
-    const width = wrapper.instance().getWidthAsPercentOfTotalWidth();
-
+    const width = getWidthAsPercentOfTotalWidth(50, 500);
     expect(width).toEqual(250);
   });
 });
