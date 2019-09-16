@@ -4,7 +4,7 @@ import Label from "../Label";
 import "./textInput.css";
 
 /** Text input with integrated label to enforce consistency in layout, error display, label placement, and required field marker. */
-function TextInputBEM({
+function TextInput({
   htmlId,
   name,
   label,
@@ -36,7 +36,7 @@ function TextInputBEM({
   );
 }
 
-TextInputBEM.propTypes = {
+TextInput.propTypes = {
   /** Unique HTML ID. Used for tying label to HTML input. Handy hook for automated testing. */
   htmlId: PropTypes.string.isRequired,
 
@@ -68,4 +68,4 @@ TextInputBEM.propTypes = {
   children: PropTypes.node
 };
 
-export default TextInputBEM;
+export default TextInput;
