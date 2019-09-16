@@ -1,6 +1,6 @@
 {
   "name": "react-comp-library-test-build-template",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "homepage": "http://zainzafar90.github.io/react-comp-library/",
   "main": "./lib/index.js",
   "private": true,
