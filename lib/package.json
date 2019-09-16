@@ -1,11 +1,11 @@
 {
-  "name": "ps-react",
+  "name": "react-comp-library-test",
   "author": {
     "name": "Zain Zafar",
     "email": "zainzafar90@gmail.com",
     "url": "https://github.com/zainzafar90"
   },
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "./index.js",
   "keywords": [
     "components",

@@ -56,7 +56,7 @@ function createPackageFile() {
     } = packageData;
 
     const minimalPackage = {
-      name: 'ps-react',
+      name: 'react-comp-library-test',
       author,
       version,
       description,
