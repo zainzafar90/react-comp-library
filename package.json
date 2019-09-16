@@ -12,15 +12,20 @@
     "build:docs": "node scripts/build.js",
     "test": "node scripts/test.js",
     "predeploy:docs": "npm run build:docs",
-    "deploy:docs": "gh-pages -d build"
+    "deploy:docs": "gh-pages -d build",
+    "build:css": "cpx \"./src/components/**/*.css\" ./lib",
+    "prebuild:lib": "rimraf lib",
+    "build:lib": "npm-run-all --parallel build:commonjs build:css build:copy-files",
+    "build:commonjs": "cross-env NODE_ENV=production babel ./src/components --out-dir ./lib --ignore spec.js"
   },
   "dependencies": {
     "@babel/core": "7.5.5",
     "@svgr/webpack": "4.3.2",
     "@typescript-eslint/eslint-plugin": "1.13.0",
     "@typescript-eslint/parser": "1.13.0",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.2",
-    "babel-jest": "^24.8.0",
+    "babel-jest": "^23.4.2",
     "babel-loader": "8.0.6",
     "babel-plugin-named-asset-import": "^0.3.3",
     "babel-preset-react-app": "^9.0.1",
@@ -140,16 +145,29 @@
   },
   "babel": {
     "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "modules": "commonjs"
+        }
+      ],
       "react-app"
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "chokidar": "^3.0.2",
+    "cpx": "1.5.0",
+    "cross-env": "4.0.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "npm-run-all": "^4.1.5",
     "react-addons-test-utils": "^15.6.2",
     "react-docgen": "^4.1.1",
-    "react-test-renderer": "^16.9.0"
+    "react-test-renderer": "^16.9.0",
+    "rimraf": "2.6.1"
   }
 }
