@@ -1,6 +1,6 @@
 {
   "name": "react-comp-library-test",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "http://zainzafar90.github.io/react-comp-library/",
   "main": "./lib/index.js",
   "engines": {
